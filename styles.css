@@ -1,4 +1,5 @@
 
+*{box-sizing: border-box;}
 
 .section-acteurs{
     margin:20px;
@@ -11,7 +12,7 @@
     margin:0;
     padding:auto;
     border-bottom: 2px solid black;
-    height:250px;
+    /*height:250px;*/
     display:flex;
     justify-content: space-between;
 
@@ -37,12 +38,16 @@
     border: 1px solid black;
     padding: 10px;
     display:flex;
+    gap:10px;
     justify-content: space-between;
+    
 }
 
 .logo-acteur {
-    max-width: 20%;
-    max-height: 200px;
+
+    width:200px;
+    object-fit:contain; /* permet de maintenir les proportions de l'image */
+    
   }
 
 .texte-tronque {
@@ -51,66 +56,87 @@
     /* code pour que le texte soit tronqué automatiquement */
     overflow:hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* les trois petits points ... */
   }
   
 
 .lire-la-suite{
-    display:block;
-    align-self:flex-end;
+
+    white-space:nowrap; /* pas de scindage du texte */
+    align-self:flex-end; /* en bas */
+    border: solid 1px;
+    padding: 10px 10px;
+    border-radius: 10px;    
+    
+}
+
+.texte-lire-la-suite {
+
+    text-decoration-line: none;
+}
+
+/* tablettes */
+@media screen and (max-width: 1200px){
+
+    .un-acteur{
+        margin:10px;
+        border: 1px solid black;
+        padding: 10px;
+        display:flex;
+        flex-wrap:wrap;  /* on place le lien en bas à droite */
+        justify-content:space-around; 
+    }
+
+    .logo-acteur {
+        align-self: center;
+    }
+
+
+    .lire-la-suite{
+        margin-left: auto; /* permet de justifier à droite */
+        /* justify-self n'est pas possible pour Flex */
+    }
 }
 
 
-p
-{
-    /* commentaire */
-    color:black;
-}
-
-.classe_3
-{
-    color:green;
-}
-
-#id_unique_1
-{
-    color:red;   
-}
-
-h3
-{
-   font-size: 100%; 
-}
+/* smartphones */
+@media screen and (max-width: 900px){
 
 
-h4
-{
-   font-size: 100%; 
-}
+    /* header */
+    .en-tete{
+        justify-content:center;
+        flex-direction:column;
+    }
 
-h5
-{
-   font-size: 1.5em; 
-}
+    .identite{
+        align-self: center;
+    }
 
-h6
-{
-   font-size: 2rem; 
-}
-
-/*
-a:hover{
-
-    color:chartreuse;
+    /* le logo GBAF est déjà centré */
 
 
-}
-*/
+    /* section acteurs */
+    .un-acteur {    
+        display:flex; 
+        flex-direction: column;
+        justify-content:space-around;
+        align-content:flex-end;
+    }
 
-.classetest1:hover a{
+    .logo-acteur {
+        align-self: center; /* alignement horizontal au centre*/
+        margin:0;
+        width: 100%;
+    }
+    
+    .texte-tronque {        
+        align-self: flex-start; /* alignement horizontal à droite */
+    }
 
-    color:chartreuse;
-
-
+    .lire-la-suite{    
+        align-self:flex-end;  /* alignement horizontal à gauche */
+       
+    }
 }
 

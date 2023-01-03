@@ -38,9 +38,11 @@
 
                 <img src="<?php echo $imagePath; ?>" alt="Logo Acteur" class="logo-acteur">
 
-                <h3 class=texte-tronque> <?php echo $ligneActeur['description'];?> /<h3>
+                <h3 class=texte-tronque> <?php echo $ligneActeur['description'];?> </h3>
 
-                <a class="lire-la-suite" href="https://openclassrooms.com/">Lire la suite</a>
+                <div class="lire-la-suite">
+                    <a href="https://openclassrooms.com/" class="texte-lire-la-suite">Lire la suite</a>
+                </div>
             </div>
 
         <?php endfor; ?>
