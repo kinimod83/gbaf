@@ -7,11 +7,11 @@ include_once('functions.php');
 
 
 
-<footer class="en-tete">
+<header class="en-tete">
 
     <!-- PHP -->
     <?php
-    $imagePath = $rootPath.'/images/logo_gbaf.png';
+    $imagePath = $rootPath.'images/logo_gbaf.png';
     ?>
 
     <!-- HTML -->
@@ -21,4 +21,4 @@ include_once('functions.php');
         <p>Icone Nom Prénom</p>
     </div>
 
-</footer>
+</header>

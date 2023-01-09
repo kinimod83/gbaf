@@ -34,14 +34,14 @@
             
                 <?php $ligneActeur = $acteursTable[$i]; ?> 
 
-                <?php $imagePath = $rootPath.'/images/'.$ligneActeur['logo'];  ?>
+                <?php $imagePath = $rootPath.'images/'.$ligneActeur['logo'];  ?>
 
                 <img src="<?php echo $imagePath; ?>" alt="Logo Acteur" class="logo-acteur">
 
                 <h3 class=texte-tronque> <?php echo $ligneActeur['description'];?> </h3>
 
                 <div class="lire-la-suite">
-                    <a href="https://openclassrooms.com/" class="texte-lire-la-suite">Lire la suite</a>
+                    <a href="actor.php?acteur_index=<?php echo($i);?>" class="texte-lire-la-suite">Lire la suite</a>
                 </div>
             </div>
 

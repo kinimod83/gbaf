@@ -1,6 +1,8 @@
 
 *{box-sizing: border-box;}
 
+
+
 .section-acteurs{
     margin:20px;
     border: 2px solid black;
@@ -75,6 +77,98 @@
     text-decoration-line: none;
 }
 
+
+/* page actor.php */
+
+.act-section-acteur
+{
+    margin:20px;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.act-logo-acteur {
+
+    width:300px;
+    object-fit:contain; /* permet de maintenir les proportions de l'image */
+    margin:auto;
+    display:block;
+
+    
+  }
+
+
+ 
+ .act-section-commentaires  
+  {
+    margin:20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.act-un-commentaire{
+    margin:10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.act-nouveau-commentaire{
+
+    white-space:nowrap; /* pas de scindage du texte */
+
+    border: solid 1px;
+    padding: 10px 10px;
+    border-radius: 10px;    
+    
+}
+
+.act-nouveau-commentaire-texte{
+    text-decoration-line: none;
+
+}
+
+ /* pages dans comments */
+
+
+
+.comment-formulaire-comment{
+    margin: 10px;
+    border: solid 1px;
+    padding: 10px 10px;
+    display:flex;
+    align-content:center;
+    justify-content:center;
+    flex-direction:column;    
+    min-height:500px;
+}
+
+.comment-label{
+    display:block;
+    align-self: center;
+    margin:10px;
+}
+
+.comment-textarea{
+    display:block;
+    margin:10px;
+    min-height: 300px;
+    width:100%;
+    align-self: center;
+}
+
+.comment-bouton-envoyer{
+    display:block;
+    white-space:nowrap; /* pas de scindage du texte */
+    border: solid 1px;
+    padding: 10px 10px;
+    border-radius: 10px;      
+    width:fit-content;
+    align-self: flex-end;
+    margin:10px;
+}
+
+
 /* tablettes */
 @media screen and (max-width: 1200px){
 
@@ -139,4 +233,7 @@
        
     }
 }
+
+
+
 
