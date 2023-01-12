@@ -1,8 +1,7 @@
 <?php
-/*session_start();*/
+session_start();
 
 include_once('./mysql.php');
-//include_once('./user.php');
 include_once('./variables.php');
 include_once('./functions.php');
 

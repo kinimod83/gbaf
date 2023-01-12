@@ -1,4 +1,4 @@
-<!-- ne pas oublier le session_start() -->
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -14,11 +14,27 @@
     <!-- Header -->
     <?php include_once('header.php'); ?>
 
+    <?php if(isset($_SESSION['username'])): ?>
+
     <?php init_acteurs_table(); ?>
 
     <!-- Section Presentation -->
     <section class="section-presentation">
-        <h1> Texte de présentation de GBAF</h1>
+        <h1> Présentation du GBAF </h1>
+        <p>Le Groupement Banque Assurance Français​ (GBAF) est une fédération représentant les 6 grands groupes français : 
+        <ul>
+            <li> BNP Paribas </li>
+            <li> BPCE </li>
+            <li> Crédit Agricole </li>
+            <li> Crédit Mutuel-CIC </li>
+            <li> Société Générale  </li>
+            <li> La Banque Postale. </li>          
+        </ul>                                                  
+        Même s’il existe une forte concurrence entre ces entités, elles vont toutes travailler de la même façon pour gérer près de 80 millions de comptes sur le territoire national.<br>
+        Le GBAF est le représentant de la profession bancaire et des assureurs sur tous les axes de la réglementation financière française. Sa mission est de promouvoir l'activité bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié des pouvoirs publics.
+        </p>
+        <br>
+        <img src='images/buildings_logos.jpg' alt='Logos Banques' class="logos-banques">        
     </section>
 
     <!-- ligne horizontale -->
@@ -26,7 +42,7 @@
 
     <!-- Section Acteur -->
     <section class="section-acteurs">
-        <h2> Texte de présentation de la section acteurs</h2>
+        <h2> Voici les acteurs que vous pouvez évaluer par un commentaire et/ou un like/dislike</h2>
 
         <?php for ($i = 0; $i < $nbActeurs; $i++):?>
 
@@ -50,6 +66,10 @@
     </section>    
 
     <!-- Footer -->
-    <?php include_once('footer.php'); ?>
+    <?php include_once('footer.php'); ?>    
+
+    <?php endif; ?>
+
+
 </body>
 </html>

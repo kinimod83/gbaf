@@ -1,6 +1,6 @@
 <?php
+    session_start();
     include_once('./../mysql.php');
-    //include_once('./../config/user.php');
     include_once('./../variables.php');
 ?>
 

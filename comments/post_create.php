@@ -1,8 +1,8 @@
 <?php
-/*session_start();*/
+session_start();
 
 include_once('./../mysql.php');
-include_once('./../user.php');
+
 include_once('./../variables.php');
 include_once('./../functions.php');
 
@@ -17,10 +17,14 @@ if (
     return;
 }
 
-if (!isset($loggedUser)) {
+if (!isset($_SESSION['username'])) {
     echo('Vous devez être authentifié pour soumettre un commentaire');
     return;
+}else{
+    $loggedUser = get_user($_SESSION['username']);
+
 }
+
 
 $comment = $postData['comment'];
 $id_acteur = $postData['id_acteur'];
@@ -50,7 +54,7 @@ if(true){
 <body>
     <?php include_once('../header.php'); ?>
 
-    <h1>Commentaire ajouté avec succès !</h1>
+    <h2>Commentaire ajouté avec succès !</h2>
     
     <div class="comment-card">        
         <div class="comment-card-body">

@@ -1,4 +1,4 @@
-<!-- ne pas oublier le session_start() -->
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -12,11 +12,12 @@
     <!-- Recuperation de l'index de l'acteur dans le tableau acteursTable[] -->
     <?php $acteurIndex = $_GET['acteur_index'];?>
 
-    <!-- le user ID est dans la variable $loggedUser['id_user'] -->
+    
 
 
     <!-- Header -->
     <?php include_once('header.php'); ?>      
+
 
     <?php init_acteurs_table(); ?>
 
@@ -25,6 +26,15 @@
     <?php $ligneActeur = $acteursTable[$acteurIndex]; ?> 
 
     <?php init_comment_table($ligneActeur['id_acteur']); ?>
+
+    <?php   
+    if (!isset($_SESSION['username'])) {
+        echo(' Erreur dans actor.php, pb connexion ');
+        exit();
+    }else{
+        $loggedUser = get_user($_SESSION['username']);
+    }    
+    ?>
 
     <?php $idUser = $loggedUser['id_user']; ?>
 
@@ -36,7 +46,7 @@
         <?php $imagePath = $rootPath.'images/'.$ligneActeur['logo'];  ?>
         <img src="<?php echo $imagePath; ?>" alt="Logo Acteur" class="act-logo-acteur">
         <h2><a href="https://openclassrooms.com/" class="act-visiter-le-site-web">Visiter le site WEB</a></h2>
-        <h2 class=act-description> <?php echo $ligneActeur['description'];?> </h2>
+        <h2 class=act-description> <?php echo(nl2br($ligneActeur['description']));?> </h2>
     </section>
 
     <?php
@@ -53,7 +63,7 @@
 
             <!-- Bouton Nouveau commentaire -->
             <div class="act-nouveau-commentaire">
-                <a href="comments/create.php<?php echo($chaineParam) ?>" class="act-nouveau-commentaire-texte">Nouveau commentaire</a>
+                <a href="comments/create.php<?php echo($chaineParam) ?>" class="act-nouveau-commentaire-texte">Nouveau commentaire</a>                
             </div>
 
             
@@ -61,7 +71,6 @@
                 $boolUpdate = has_already_voted($idUser, $idActeur);
                 if($boolUpdate){
                     $ligneVote = get_vote($idUser, $idActeur);
-                    //echo "actor ici";
                     //var_dump($ligneVote);
                 }else
                 {
@@ -123,7 +132,7 @@
                 <?php $ligneCommentaire = $commentairesTable[$i]; ?> 
                 <p><?php echo $ligneCommentaire['prenom']; ?></p>
                 <p><?php echo $ligneCommentaire['date_add']; ?></p>
-                <p><?php echo $ligneCommentaire['post']; ?></p>
+                <p><?php echo(nl2br($ligneCommentaire['post'])); ?></p>
             </div>
 
         <?php endfor; ?>
