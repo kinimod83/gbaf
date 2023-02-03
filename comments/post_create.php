@@ -45,10 +45,11 @@ if(true){
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>GBAF - Execution creation de commentaires</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo($rootUrl . 'styles.css'); ?>"rel="stylesheet">  
 </head>
 <body>
@@ -58,7 +59,7 @@ if(true){
     
     <div class="comment-card">        
         <div class="comment-card-body">
-            <p class="comment-card-text"><b>Votre commentaire</b> : <?php echo strip_tags($comment); ?></p>
+            <p class="comment-card-text"><b>Votre commentaire</b> : <br><?php echo nl2br(strip_tags($comment)); ?></p>
         </div>
     </div>    
     <?php include_once('../footer.php'); ?>

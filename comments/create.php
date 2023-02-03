@@ -24,11 +24,12 @@ if (!isset($getData['nom_acteur']) )
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">    
-    <title>GBAF - Page Acteur</title>
-    <link href="<?php echo($rootUrl . 'styles.css'); ?>"rel="stylesheet">    
+    <title>GBAF - Création d'un commentaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?php echo($rootUrl . 'styles.css'); ?>" rel="stylesheet">    
 </head>
 <body>
 
@@ -40,9 +41,10 @@ if (!isset($getData['nom_acteur']) )
         <div class="comment-label">
             <label for="comment" >Postez un commentaire pour <strong><?php echo($getData['nom_acteur']);?></strong></label>        
         </div>
-            <textarea placeholder="Soyez objectifs et factuels" id="comment" name="comment" class="comment-textarea"></textarea>
-            <input type="hidden" id="id_acteur" name="id_acteur" value=<?php echo($getData['id_acteur']); ?>>
-            <button type="submit" class="comment-bouton-envoyer">Envoyer</button>
+            <textarea required placeholder="Soyez objectifs et factuels" id="comment" name="comment" class="comment-textarea"></textarea>
+            <input type="hidden" id="id_acteur" name="id_acteur" value=<?= add_quotes($getData['id_acteur']); ?> >
+            <input type="submit" class="comment-bouton-envoyer bouton" value="Envoyer">
+
     </form>
 
 

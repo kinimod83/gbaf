@@ -1,5 +1,13 @@
 <?php
 
+
+
+function add_quotes($value): string{
+    $tmpChaine = '"'."$value".'"';
+    return $tmpChaine;
+}
+
+
 function init_acteurs_table():bool
 {
     global $mysqlClient, $nbActeurs, $acteursTable;
@@ -39,15 +47,17 @@ function init_comment_table($acteurId):bool
 
     if ($mysqlClient!==null) {
 
-       //echo ("init_comment_table 2");
-       $retrieveActorStatement = $mysqlClient->prepare("SELECT * FROM accounts LEFT JOIN posts ON accounts.id_user = posts.id_user WHERE id_acteur = $acteurId");
-       $retrieveActorStatement->execute();
-       $commentairesTable = $retrieveActorStatement->fetchAll(PDO::FETCH_ASSOC);   
+        //echo ("init_comment_table 2");
+        $retrieveActorStatement = $mysqlClient->prepare('SELECT *, DATE_FORMAT(date_add, "%d/%m/%Y %k:%i") AS comment_date
+                                    FROM accounts LEFT JOIN posts ON accounts.id_user = posts.id_user WHERE id_acteur = :acteurId');
+        $retrieveActorStatement->execute(
+                ['acteurId'=>$acteurId]
+        );
+        $commentairesTable = $retrieveActorStatement->fetchAll(PDO::FETCH_ASSOC);   
        
-       //var_dump($commentairesTable);
+        //var_dump($commentairesTable);
 
-       $nbCommentaires=count($commentairesTable);
-
+        $nbCommentaires=count($commentairesTable);
     } else {
 
         //echo ("init_comment_table 3");
@@ -57,6 +67,40 @@ function init_comment_table($acteurId):bool
     return($error);
 
 }
+
+/* Teste si un utilisateur a déjà commenté un acteur */
+function has_already_commmented($idActeur, $idUser):bool
+{
+    global $mysqlClient;
+    $error=false;
+    //echo ("has_already_commmented 0");
+
+    if ($mysqlClient!==null) {
+
+
+        //echo ("has_already_commmented 2 ");
+        $retrieveStatement = $mysqlClient->prepare("SELECT id_user FROM posts WHERE id_user = $idUser AND id_acteur = $idActeur");
+        $retrieveStatement->execute();
+        $commentLigne = $retrieveStatement->fetchAll(PDO::FETCH_ASSOC);   
+
+        //var_dump($voteLigne);        
+
+        if(empty($commentLigne)) {
+            return false;
+        }else{
+            return true;
+        }
+ 
+     } else {
+ 
+         //echo ("has_already_commmented 3");
+        $error=true;
+     }
+ 
+     return($error);    
+}
+
+
 
 function get_one_user_data($idUser):bool
 {
@@ -384,3 +428,5 @@ function create_or_update_user($userLigne, $boolUpdate):bool
  
      return($error);    
 }
+
+

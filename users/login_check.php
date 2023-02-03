@@ -16,10 +16,10 @@ include_once('../variables.php');
 include_once('../functions.php');
 
 $loginCheck=false;
+$error=0;
 
 if(!user_already_recorded($postData['username'])){
-    echo("Ce pseudo n'existe pas :(");
-
+    $error = 1;    
 }else{
     $userLigne=get_user($postData['username']);
     if($userLigne['password'] == $postData['password']){
@@ -28,7 +28,7 @@ if(!user_already_recorded($postData['username'])){
         $loginCheck=true;
     }
     else{
-        echo("Mauvais mot de passe :(");
+        $error=2;
     }
 }
 
@@ -38,9 +38,31 @@ if($loginCheck == true){
 }
 ?>
 
-<br><br>
-<a href="../home.php" >Retour à la page d'accueil</a>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">    
+    <title>GBAF - Execution login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../styles.css" rel="stylesheet">    
+</head>
+<body>
 
+<br><br>
+
+<?php
+if($error == 1){
+    echo("Ce pseudo n'existe pas :(");
+}else if($error == 2){
+    echo("Mauvais mot de passe :(");
+}
+?>
+
+
+<br><br>
+<a href="../home.php" class="bouton">Retour à la page d'accueil</a>
+
+</body>
 
 
 

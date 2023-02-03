@@ -29,7 +29,7 @@ if (
     )
 {
 	echo('Le vote est invalide.');
-    vardump($postData);
+    var_dump($postData);
     return;
 }
 

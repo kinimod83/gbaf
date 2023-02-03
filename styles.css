@@ -1,5 +1,102 @@
 
-*{box-sizing: border-box;}
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: medium;
+
+}
+
+
+
+.petite-police{
+    font-size: small;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'ABeeZee', sans-serif;
+
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 25px;
+}
+
+a{
+    text-decoration-line: none;
+    color:black;
+}
+
+a:hover, a:active, a:visited {
+    color:black;
+}
+
+.logo{    
+    border: 1px solid black;
+}
+
+.bloc-centre {
+    margin:auto;
+    display:block;    
+}
+
+.bloc-a-gauche{
+    margin-right:10px;
+    display:block;    
+}
+
+.bouton{
+    display:block;
+    white-space:nowrap; /* pas de scindage du texte */
+    border: solid 2px;
+    padding: 10px 10px;
+    border-radius: 20px;      
+    width: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ff9090;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.397);
+    cursor: pointer;
+}
+
+.formulaire{
+    margin: 10px;
+    border: solid 1px;
+    padding: 10px 10px;
+    display:flex;
+    align-items:flex-start;
+    flex-direction:column;    
+  
+    background-color:#F0E0E0;
+}
+
+.element-formulaire{
+    margin:8px;
+    display:flex;
+    /*margin: 10px;*/
+}
+
+
+.label-formulaire {
+    text-align: right;
+    display:block;
+    width: 150px;
+    /*border: 2px solid #ccc;*/    
+  }
+
+.input-formulaire {
+    display:block;
+    margin-left:10px;
+    /*margin-top: 10px;
+    padding: 12px 20px;*/
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+  }
+
 
 
 
@@ -12,7 +109,6 @@
 
 .en-tete{
     margin:0;
-    padding:auto;
     border-bottom: 2px solid black;
     /*height:250px;*/
     display:flex;
@@ -30,8 +126,21 @@
 
 }
 
+.logos-banques{
+        width: 100%;
+        min-width: 900px; 
+}
+
+
+.logos-banques-small{
+    display:none;
+}
+
 .identite{
     margin:20px 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -66,9 +175,8 @@
 
     white-space:nowrap; /* pas de scindage du texte */
     align-self:flex-end; /* en bas */
-    border: solid 1px;
     padding: 10px 10px;
-    border-radius: 10px;    
+  
     
 }
 
@@ -84,7 +192,7 @@
 {
     margin:20px;
     border: 2px solid black;
-    padding: 20px;
+    padding: 40px;
 }
 
 .act-logo-acteur {
@@ -93,11 +201,16 @@
     object-fit:contain; /* permet de maintenir les proportions de l'image */
     margin:auto;
     display:block;
+}
 
-    
-  }
+.act-visiter-le-site-web{
+    margin-top:40px;
 
+}
 
+.act-description{
+    margin-top:40px;
+}
  
  .act-section-commentaires  
   {
@@ -106,27 +219,63 @@
     padding: 20px;
 }
 
+.act-ligne-commentaires{
+    display:flex;
+    justify-content:space-between;
+
+
+}
+
 .act-un-commentaire{
-    margin:10px;
+    margin-left:10px;
+    margin-top:30px;
     padding: 5px;
     border: 1px solid black;
     border-radius: 10px;
 }
 
-.act-nouveau-commentaire{
 
-    white-space:nowrap; /* pas de scindage du texte */
 
-    border: solid 1px;
-    padding: 10px 10px;
-    border-radius: 10px;    
-    
+.btn-thumb{
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;    
+    background-image: url('images/inactive-thumb-up.png');
+    background-position: center;
+    background-repeat: no-repeat;      
+
 }
 
-.act-nouveau-commentaire-texte{
-    text-decoration-line: none;
+.btn-like-inactive{
 
+    background-image: url('images/inactive-thumb-up.png');
+  
 }
+
+.btn-like-active{
+
+    background-image: url('images/active-thumb-up.png');
+  
+}
+
+
+.btn-dislike-inactive{
+
+    background-image: url('images/inactive-thumb-down.png');
+  
+}
+
+.btn-dislike-active{
+
+    background-image: url('images/active-thumb-down.png');
+  
+}
+
+
+
+
 
  /* pages dans comments */
 
@@ -169,6 +318,9 @@
 }
 
 
+
+
+
 /* tablettes */
 @media screen and (max-width: 1200px){
 
@@ -198,10 +350,10 @@
 
 
     /* header */
-    .en-tete{
+    /*.en-tete{
         justify-content:center;
         flex-direction:column;
-    }
+    }*/
 
     .identite{
         align-self: center;
@@ -232,6 +384,30 @@
         align-self:flex-end;  /* alignement horizontal à gauche */
        
     }
+    .logos-banques{
+        display:none;
+
+    }
+
+    .logos-banques-small{
+        display:flex;
+       
+        justify-content:space-around;
+        background-color: rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+
+
+    }
+
+    .logo-une-banque{
+        display:block;        
+
+        margin:10px;
+
+        object-fit:contain; 
+
+    }
+    
 }
 
 

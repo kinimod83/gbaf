@@ -1,22 +1,9 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">    
-    <title>GBAF - Formulaire de login</title>
-    <link href="styles.css" rel="stylesheet">    
-</head>
-<body>
-<?php
-include_once('mysql.php');
-include_once('variables.php');
-include_once('functions.php');
-?>
 
-
+<main>
 
 <?php
-$imagePath = $rootPath.'images/logo_gbaf.png';
+$imagePath = $rootUrl.'images/logo_gbaf.png';
 ?>
 
 <img src="<?php echo $imagePath; ?>" alt="Logo de GBAF" class="logo-gbaf">
@@ -30,27 +17,32 @@ $imagePath = $rootPath.'images/logo_gbaf.png';
 
  
 
-    <h2>Connexion</h2>
+<h2>Connexion</h2>
 
-    <form method="post" action="users/login_check.php" class="class-user-form">
+<form method="post" action="users/login_check.php" class="class-user-form formulaire">
 
-    <label for="username">Pseudo</label>         
-    <input type="text" required name="username">
-  
-    <label for="password">Mot de passe</label> 
-    <input type="password" required name="password">
+<div class="element-formulaire">
+    <label for="username" class="label-formulaire">Pseudo</label>         
+    <input type="text" required id="username" name="username" class="input-formulaire">
+</div>
 
-    
-    <button type="submit" class="login-valider">Valider</button>
-    </form>     
-
-    <a href="users/forgot_pass_form.php" class="login-forgotten">Mot de passe oublié</a>
+<div class="element-formulaire">
+    <label for="password" class="label-formulaire">Mot de passe</label> 
+    <input type="password" required id="password" name="password" class="input-formulaire">
+</div>        
 
 
-    <h2>Inscription</h2>
-    <a href="users/user_form.php" class="login-form">S'inscrire</a>
+<input type="submit" class="login-valider bouton" value="Valider">
+
+<a href="users/forgot_pass_form.php" class="login-forgotten bouton petite-police">Mot de passe oublié</a>    
+</form>     
 
 
-</body>
 
-</html>
+<br><br>
+<h2>Inscription</h2>
+<a href="users/user_form.php" class="login-form bouton">S'inscrire</a>
+
+
+</main>
+

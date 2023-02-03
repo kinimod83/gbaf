@@ -1,5 +1,4 @@
 <?php
-
 if(!isset($_POST['username']) || !isset($_POST['question'])
         || !isset($_POST['question'])
 ){
@@ -8,8 +7,6 @@ if(!isset($_POST['username']) || !isset($_POST['question'])
 }
 
 $postData = $_POST;
-
-//echo(" question_check 1 ");
 
 include_once('../mysql.php');
 include_once('../variables.php');
@@ -40,8 +37,12 @@ if($questionCheck == true){
 }
 ?>
 
+
+
 <br><br>
 <a href="../home.php" >Retour à la page d'accueil</a>
+
+
 
 
 

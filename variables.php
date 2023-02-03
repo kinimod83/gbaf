@@ -1,11 +1,5 @@
 <?php
 
-$bddTableName='gbaf';
-$hostName='local:8080';
-$bddlogin='root';
-$bddPassWord='root';
-
-
 $rootPath='/gbaf';
 
 $acteursTable = [];
