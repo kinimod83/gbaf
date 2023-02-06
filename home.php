@@ -40,11 +40,11 @@
             <img src='images/buildings_logos.jpg' alt='Logos Banques' class="logos-banques">   
             <div class="logos-banques-small">
                 <img src='images/bnp.png' alt='Logo BNP' class="logo-une-banque">   
-                <img src='images/bpce.png' alt='Logos LB Postale' class="logo-une-banque">   
-                <img src='images/ca.png' alt='Logos Banques' class="logo-une-banque">    
-                <img src='images/credit_mutuel.png' alt='Logos Banques' class="logo-une-banque">    
-                <img src='images/lbpostale.png' alt='Logos Banques' class="logo-une-banque">   
-                <img src='images/sg.png' alt='Logos Banques' class="logo-une-banque">   
+                <img src='images/bpce.png' alt='Logo BPCE' class="logo-une-banque">   
+                <img src='images/ca.png' alt='Logo CA' class="logo-une-banque">    
+                <img src='images/credit_mutuel.png' alt='Logos Credit Mutuel' class="logo-une-banque">    
+                <img src='images/lbpostale.png' alt='Logs La Banque Postale' class="logo-une-banque">   
+                <img src='images/sg.png' alt='Logo Société Générale' class="logo-une-banque">   
             </div>     
         </section>
 

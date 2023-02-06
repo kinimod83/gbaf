@@ -41,7 +41,7 @@ if (!isset($getData['nom_acteur']) )
         <div class="comment-label">
             <label for="comment" >Postez un commentaire pour <strong><?php echo($getData['nom_acteur']);?></strong></label>        
         </div>
-            <textarea required placeholder="Soyez objectifs et factuels" id="comment" name="comment" class="comment-textarea"></textarea>
+            <textarea required placeholder="Soyez objectifs et factuels" id="comment" name="comment" class="comment-textarea" cols='20' rows='5'></textarea>
             <input type="hidden" id="id_acteur" name="id_acteur" value=<?= add_quotes($getData['id_acteur']); ?> >
             <input type="submit" class="comment-bouton-envoyer bouton" value="Envoyer">
 

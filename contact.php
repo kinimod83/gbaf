@@ -35,7 +35,7 @@ $imagePath = $rootUrl.'images/logo_gbaf.png';
   <input type="email" id="email" name="email"><br>
 
   <label for="message">Entrez votre message:</label>
-  <textarea id="contact-message" name="message" rows= "5" cols="50"></textarea><br>  
+  <textarea id="contact-message" name="message" class="contact-textarea"></textarea><br>  
   
   <input type="submit" value="Envoyer" class="bouton">
 </form>

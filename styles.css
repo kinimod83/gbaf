@@ -306,6 +306,14 @@ a:hover, a:active, a:visited {
     align-self: center;
 }
 
+.contact-textarea{
+    display:block;
+    margin:4px;
+    min-height: 200px;
+    width:100%;
+    align-self: center;
+}
+
 .comment-bouton-envoyer{
     display:block;
     white-space:nowrap; /* pas de scindage du texte */
@@ -342,6 +350,8 @@ a:hover, a:active, a:visited {
         margin-left: auto; /* permet de justifier à droite */
         /* justify-self n'est pas possible pour Flex */
     }
+
+ 
 }
 
 
@@ -407,7 +417,50 @@ a:hover, a:active, a:visited {
         object-fit:contain; 
 
     }
+
+
+    .act-ligne-commentaires{
+        display:flex;
+        flex-direction: column;    
+    }
+
+
+    .element-formulaire{
+        margin:4px;
+        display:flex;
+        flex-direction: column; 
+        /*margin: 10px;*/
+    }
+
+    .label-formulaire {
+        text-align: left;
+        display:block;
+        /*width: 150px;*/
+        /*border: 2px solid #ccc;*/    
+      }
     
+      .input-formulaire {
+        display:block;
+        border: 2px solid #cccccc;
+        border-radius: 4px;
+      }      
+
+
+    .comment-textarea{
+        display:block;
+        margin:4px;
+        min-height: 200px;
+        width:100%;
+        align-self: left;
+    }
+
+    .contact-textarea{
+        display:block;
+        margin:4px;
+        min-height: 200px;
+        width:100%;
+        align-self: left;
+    }
 }
 
 
