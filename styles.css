@@ -451,7 +451,6 @@ a:hover, a:active, a:visited {
         margin:4px;
         min-height: 200px;
         width:100%;
-        align-self: left;
     }
 
     .contact-textarea{
@@ -459,7 +458,6 @@ a:hover, a:active, a:visited {
         margin:4px;
         min-height: 200px;
         width:100%;
-        align-self: left;
     }
 }
 
